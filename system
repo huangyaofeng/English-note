@@ -1,0 +1,70 @@
+                         Exploring The system
+Now that we know how to move around the file system,it's time for a guided 
+tour of our Linux system.Before we start however,we're going to learn some 
+more command that will be useful along the way.
+  The ls command is propbably the most used command,and for good reason.
+With it we can see dircetory contents and determine a variety of important 
+file and directory attributes(属性).As we have seen,we can simply type ls 
+to see a list of file and subdirectories(子目录),contained in the current 
+working directory.
+ --------option and argument 
+This brings us to a very important point about how most commands work.Comman-ds are often followed by one or more options that modify(修改)their behavio-r,and further,by one or more arguments,the items(项目) upon which the comma-nd acts.So most commands look kind of like this:
+        command -option arguments
+Most command use options consisting of a single character preceded(领先，在..之前) by a dash(破折号),for example,"-l",but many commands,including those 
+from the GNU Project,also support long options,consisting of a word precededby two dashes.Also,many commands allow multiple(位数,许多)short  options,to
+be strung(串,捆)together.In this example,the ls command is given two optionsthe "l" option to produce long format output,and the "t" option to sort(分类排序)the result by the file's modification time.
+#---------determining a file's type with file
+  As we explore the system it will be useful to know what files contian.To
+do this we will use the file command to determine a file'e type.As we 
+discussed earlier,filenames in Linux are not required to reflect a file's 
+contents.While a filename like "picture.jpg" would normally be expected to 
+contain a JPEG compressed(压缩的) image,it is not required to in Linux.We 
+can invoke the file command this way :
+  ------file filename
+There are many kinds of files.In fact,one of the common ideas in Unix-like 
+operating systems such as Linux is that "everything is a file."As we proceed(进行) with our lessons,we will see just how true that statment is.
+  While many of the files on your system are familiar, for exmaple MP3 and
+JPEG,there are many kinds that are a little less obvious and a few that are quit strange.
+#---------Viewing File Contents With Less
+The less command is a program to view text files.Throughout our Linux systemthere are many files that contain human-readable text.The less program 
+provides a convenient way to examine(检查) them.
+                         What Is "Text"
+ There are many ways to represent information on a computer.All methods invo-lve defining a relationship between the information and some numbers that
+ will be used to represent it.Computers after all, only understand numbers 
+and all data is converted to numberic representation.(数值表示法)
+   在计算机里，有许多方法可以表达信息。所有的方法都涉及到，在信息与一些数字
+之间确立一种关系，而这些数字可以用来表达信息。毕竟，计算机只能理解数字，这样所有的数据都被转换成数值表示法。
+  Some of these representation systems are very complex(such as compressed 
+  video files),while others are rather simple.One of the earliest and simple-st is called ASCII text. ASCII (pronounced"AS-Key")is short for American 
+Standard Code for Information Interchange(交换,互换).This is a simple encodi-ng scheme(编码方法)that was first used on Teletype machaines to map(映射)
+keyboard characters to numbers.
+   Text is a simple one-to-one mapping of characters to numbers.It is very 
+compact(紧凑).Fifty characters of text translates to fifty bytes fo data.It
+is important to understand that text only contains a simple mapping of 
+character to numbers.It is not the same as a word processor(处理器)document
+such as one created by Microsoft Word or OpenOffice.org Writer.Those files,
+in contrast(与～对比)to simple ASCII text,contain many non-text elements(元素)that are used to describe its structure(结构,构成) and formatting.Plain
+ASCII text files contain only the characters themselves and a few rudimentar-y(基本的) control codes like tabs,carriage returns(回车符) and line feeds(换行符).Throughout a Linux system,many files are stored in text format and 
+there are many Linux tools that work with text files.Even Windows recognizesthe importance of this format.The well-known NOTEPAD.EXE program is an 
+editor for plain ASCII text files.
+  文本是简单的字符与数字之间的一一映射。它非常紧凑。五十字符的文本翻译成五十字节的数据。文本只是包含简单的字符到数字的映射，理解这点很重要。它和一些文字处理器文档和一样，比如说由微软和OpenOffice.org文档编辑器创建的文件。这些文件，和简单的ASCII文件，只包含字符本身，和一些基本的控制符，像制表 符，回车符及换行符。纵观Linux系统，许多文件以文件格式存储，也有许多Linux工具来处理文本文件。甚至Windows也承认这种文件格式的重要性。著名的NOTEPAD.EXE程序就是一个ASCII文本编辑器。
+  Why would we want to examine text files?Because many of the files that 
+contain system settings(called configuration files)are stored in this formatand being able to read them gives us insight about how the system works.In
+addition,many of the actual programs that the system uses (called scripts)
+are stored in this format.In later chapters,we will learn how to edit text
+files in order to modify systems settings and write our own scripts,but for
+nor we will just look at their contents.
+The less command is used like this :
+---------less filename 
+Once started ,the less program allows you to scroll forward and backward
+through a text file.For examale ,to examine the file that defines all the system's user accounts,enter following command:
+---------less /etc/passwd
+ 一旦运行起来，less程序允许你前后滚动文件。例如，要查看一个定义了系统中全部
+ 用户身份的文件，输入以下命令：
+ Once the less program starts,we may view the contents fo the file.If the 
+ file is longer than one page,we can scroll up and down.To exit less,press
+ the "q"key.The table below lists the most common keyboard commands used by
+ less.
+# ----------Less is more(禅语：色即是空 )
+The less program was designed as an improved replacement of an earlier Unix
+program called more.The name "less" is a play on the phrase(习语)"less is more"--a motto of modernist architects(建筑师) and designers.
